@@ -81,6 +81,7 @@ function slider() {
       asNavFor: '.nav-slider-' + sliderNum,
       slidesToScroll: 1,
       slidesToShow: 1,
+      lazyLoad: 'progressive'
     });
   });
   $('.catalogue-block__nav-slider').each( function() {
@@ -90,9 +91,14 @@ function slider() {
       asNavFor: '.slider-' + navsliderNum,
       slidesToScroll: 1,
       infinite: true,
-      slidesToShow: 4,
-      focusOnSelect: true
+      slidesToShow: 5,
+      focusOnSelect: true,
+      lazyLoad: 'progressive'
     });
+  });
+  //догрузка изображений при перелистывании
+  $('.catalogue-block__slider, .catalogue-block__nav-slider').on('afterChange', function(){
+    lazy();
   });
 }
 //mask

@@ -1,11 +1,7 @@
 .delivery {
-  background: url('../img/banners/delivery-banner.jpg') no-repeat center top;
-  background-size: cover;
   color: #fff;
+  background-color: #252525;
   padding: 90px 0;
-  .container {
-    z-index: 2;
-  }
   &__title {
     font-size: 52px;
     line-height: 1.23;
