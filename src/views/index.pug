@@ -1,0 +1,21 @@
+doctype html
+html(lang="ru")
+  head
+    include blocks/head
+  body
+    include blocks/header
+    //mobile-nav
+    //page
+    main.main
+      include blocks/home
+      include blocks/catalogue
+      include blocks/promo
+      include blocks/description
+      include blocks/delivery
+      include blocks/reviews
+      include blocks/contacts
+    //footer
+    include blocks/footer
+    script(src="js/jquery/jquery.min.js")
+    script(src="js/libs.min.js")                  
+    script(src="js/common.min.js")

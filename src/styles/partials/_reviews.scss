@@ -1,0 +1,49 @@
+.reviews {
+  .block__title {
+    padding-bottom: 0.4em;
+  }
+  &__container {
+    margin: -15px;
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__block {
+    width: 50%;
+    padding: 15px;
+    &-container {
+      position: relative;
+      &:before {
+        content: '';
+        display: block;
+        padding-top: 55%;
+      }
+    }
+    &-video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .popup-youtube {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      top: 0;
+    }
+  }
+}
+
+@media all and(max-width: 576px) {
+  .reviews {
+    &__block {
+      width: 100%;
+    }
+    &__container {
+      padding-top: 40px;
+    }
+  }
+}

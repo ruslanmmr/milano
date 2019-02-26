@@ -1,0 +1,55 @@
+mixin block()
+  .catalogue-block
+    .catalogue-block__container
+      .catalogue-block__gallery
+        .catalogue-block__slider
+          .catalogue-block__slider-slide
+            img(src="img/catalogue/photo1.jpg", alt="")
+          .catalogue-block__slider-slide
+            img(src="img/catalogue/photo2.jpg", alt="")
+          .catalogue-block__slider-slide
+            img(src="img/catalogue/photo3.jpg", alt="")
+          .catalogue-block__slider-slide
+            img(src="img/catalogue/photo4.jpg", alt="")
+          .catalogue-block__slider-slide
+            img(src="img/catalogue/photo5.jpg", alt="")
+        .catalogue-block__nav-slider
+          .catalogue-block__nav-slider-slide
+            .catalogue-block__nav-slider-slide-container
+              img(src="img/catalogue/photo1.jpg", alt="")
+          .catalogue-block__nav-slider-slide
+            .catalogue-block__nav-slider-slide-container
+              img(src="img/catalogue/photo2.jpg", alt="")
+          .catalogue-block__nav-slider-slide
+            .catalogue-block__nav-slider-slide-container
+              img(src="img/catalogue/photo3.jpg", alt="")
+          .catalogue-block__nav-slider-slide
+            .catalogue-block__nav-slider-slide-container
+              img(src="img/catalogue/photo4.jpg", alt="")
+          .catalogue-block__nav-slider-slide
+            .catalogue-block__nav-slider-slide-container
+              img(src="img/catalogue/photo5.jpg", alt="")
+      .catalogue-block__info
+        span.catalogue-block__title Дизайнерское пальто MARYSSA BLUE
+        span.catalogue-block__brand MARYSSA BLUE
+        .catalogue-block__price-container
+          span.catalogue-block__price 13900 р.
+          span.catalogue-block__old-price 27800 р.
+        a(href="#").catalogue-block__discount Нажмите и получите рассрочку от 580 р./мес. Первый взнос – 0 р.
+        span.catalogue-block__stock При покупке пальто, набор: берет + кашемировый палантин + перчатки <strong>В ПОДАРОК</strong>
+        ul.catalogue-block__list
+          li.catalogue-block__item Размеры: 38-52
+          li.catalogue-block__item Длина: 90 см/105 см/115 см
+          li.catalogue-block__item Ткань: Италия (шерсть 80%, полиамид 20%)
+          li.catalogue-block__item Гарантия на изделие: 2 года
+          li.catalogue-block__item В комплект входит: пояс
+          li.catalogue-block__item Артикул: 113
+        a(href="#").catalogue-block__discount-button.promo-style <span>получить</span> ПРОМО-КОД НА СКИДКУ 50%
+.catalogue.block
+  .container
+    span.block__title КАТАЛОГ ПАЛЬТО
+    .catalogue__container
+      +block()
+      +block()
+      +block()
+      +block()
