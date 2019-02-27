@@ -1,55 +1,453 @@
-mixin block()
-  .catalogue-block
-    .catalogue-block__container
-      .catalogue-block__gallery
-        .catalogue-block__slider
-          .catalogue-block__slider-slide
-            img(data-src="img/catalogue/photo1.jpg", alt="").lazy
-          .catalogue-block__slider-slide
-            img(data-src="img/catalogue/photo2.jpg", alt="").lazy
-          .catalogue-block__slider-slide
-            img(data-src="img/catalogue/photo3.jpg", alt="").lazy
-          .catalogue-block__slider-slide
-            img(data-src="img/catalogue/photo4.jpg", alt="").lazy
-          .catalogue-block__slider-slide
-            img(data-src="img/catalogue/photo5.jpg", alt="").lazy
-        .catalogue-block__nav-slider
-          .catalogue-block__nav-slider-slide
-            .catalogue-block__nav-slider-slide-container
-              img(data-src="img/catalogue/photo1.jpg", alt="").lazy
-          .catalogue-block__nav-slider-slide
-            .catalogue-block__nav-slider-slide-container
-              img(data-src="img/catalogue/photo2.jpg", alt="").lazy
-          .catalogue-block__nav-slider-slide
-            .catalogue-block__nav-slider-slide-container
-              img(data-src="img/catalogue/photo3.jpg", alt="").lazy
-          .catalogue-block__nav-slider-slide
-            .catalogue-block__nav-slider-slide-container
-              img(data-src="img/catalogue/photo4.jpg", alt="").lazy
-          .catalogue-block__nav-slider-slide
-            .catalogue-block__nav-slider-slide-container
-              img(data-src="img/catalogue/photo5.jpg", alt="").lazy
-      .catalogue-block__info
-        span.catalogue-block__title Дизайнерское пальто MARYSSA BLUE
-        span.catalogue-block__brand MARYSSA BLUE
-        .catalogue-block__price-container
-          span.catalogue-block__price 13900 р.
-          span.catalogue-block__old-price 27800 р.
-        a(href="#").catalogue-block__discount Нажмите и получите рассрочку от 580 р./мес. Первый взнос – 0 р.
-        span.catalogue-block__stock При покупке пальто, набор: берет + кашемировый палантин + перчатки <strong>В ПОДАРОК</strong>
-        ul.catalogue-block__list
-          li.catalogue-block__item Размеры: 38-52
-          li.catalogue-block__item Длина: 90 см/105 см/115 см
-          li.catalogue-block__item Ткань: Италия (шерсть 80%, полиамид 20%)
-          li.catalogue-block__item Гарантия на изделие: 2 года
-          li.catalogue-block__item В комплект входит: пояс
-          li.catalogue-block__item Артикул: 113
-        a(href="#").catalogue-block__discount-button.promo-style <span>получить</span> ПРОМО-КОД НА СКИДКУ 50%
+mixin block(title, brand, article)
+  .catalogue-block__info
+    span.catalogue-block__title=title
+    span.catalogue-block__brand=brand
+    .catalogue-block__price-container
+      span.catalogue-block__price 13900 р.
+      span.catalogue-block__old-price 27800 р.
+    a(href="#popup2").popup_link.catalogue-block__discount Нажмите и получите рассрочку от 580 р./мес. Первый взнос – 0 р.
+    span.catalogue-block__stock При покупке пальто, набор: берет + кашемировый палантин + перчатки <strong>В ПОДАРОК</strong>
+    ul.catalogue-block__list
+      li.catalogue-block__item Размеры: 38-52
+      li.catalogue-block__item Длина: 90 см/105 см/115 см
+      li.catalogue-block__item Ткань: Италия (шерсть 80%, полиамид 20%)
+      li.catalogue-block__item Гарантия на изделие: 2 года
+      li.catalogue-block__item В комплект входит: пояс
+      li.catalogue-block__item=article
+  a(href="#popup1").popup_link.catalogue-block__discount-button.promo-style <span>получить</span> ПРОМО-КОД НА СКИДКУ 50%
 .catalogue.block
   .container
     span.block__title КАТАЛОГ ПАЛЬТО
     .catalogue__container
-      +block()
-      +block()
-      +block()
-      +block()
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo1_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo1_2.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo1_3.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo1_4.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo1_5.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo1_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo1_2.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo1_3.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo1_4.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo1_5.jpg", alt="").lazy
+          +block('Дизайнерское пальто MARYSSA BLUE', 'MARYSSA BLUE', 'Артикул: 113')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo2_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo2_2.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo2_3.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo2_4.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo2_5.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo2_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo2_2.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo2_3.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo2_4.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo2_5.jpg", alt="").lazy
+          +block('Дизайнерское пальто AUDEN OLIVE', 'AUDEN OLIVE', 'Артикул: 132')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo3_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo3_1.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo3_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo3_1.jpg", alt="").lazy
+          +block('Дизайнерское пальто FIFI SAND', 'FIFI SAND', 'Артикул: 129')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo4_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo4_2.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo4_3.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo4_4.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo4_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo4_2.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo4_3.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo4_4.jpg", alt="").lazy
+          +block('Дизайнерское пальто AYDEN RED', 'AYDEN RED', 'Артикул: 138')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo5_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo5_2.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo5_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo5_2.jpg", alt="").lazy
+          +block('Дизайнерское пальто ANGIE BROWN', 'ANGIE BROWN', 'Артикул: 108')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo6_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo6_2.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo6_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo6_2.jpg", alt="").lazy
+          +block('Дизайнерское пальто FIFI GREEN', 'FIFI GREEN', 'Артикул: 125')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo7_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo7_2.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo7_3.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo7_4.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo7_5.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo7_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo7_2.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo7_3.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo7_4.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo7_5.jpg", alt="").lazy
+          +block('Дизайнерское пальто CAMMIE GREY', 'CAMMIE GREY', 'Артикул: 103')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo8_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo8_2.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo8_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo8_2.jpg", alt="").lazy
+          +block('Дизайнерское пальто ZARIAH PURPLE', 'ZARIAH PURPLE', 'Артикул: 111')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo9_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo9_1.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo9_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo9_1.jpg", alt="").lazy
+          +block('Дизайнерское пальто LALA PINK', 'LALA PINK', 'Артикул: 119')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo10_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo10_2.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo10_3.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo10_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo10_2.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo10_3.jpg", alt="").lazy
+          +block('Дизайнерское пальто DANNIE BLUE', 'DANNIE BLUE', 'Артикул: 114')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo11_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo11_2.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo11_3.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo11_4.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo11_5.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo11_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo11_2.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo11_3.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo11_4.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo11_5.jpg", alt="").lazy
+          +block('Дизайнерское пальто ZARIAH BROWN', 'ZARIAH BROWN', 'Артикул: 112')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo12_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo12_2.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo12_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo12_2.jpg", alt="").lazy
+          +block('Дизайнерское пальто MARYSSA BLUE', 'MACAYLA BORDO', 'Артикул: 121')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo13_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo13_2.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo13_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo13_2.jpg", alt="").lazy
+          +block('Дизайнерское пальто JONI BLUE', 'JONI BLUE', 'Артикул: 142')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo14_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo14_2.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo14_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo14_2.jpg", alt="").lazy
+          +block('Дизайнерское пальто KARI BROWN', 'KARI BROWN', 'Артикул: 112')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo15_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo15_2.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo15_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo15_2.jpg", alt="").lazy
+          +block('Дизайнерское пальто KAMILE PURPLE', 'KAMILE PURPLE', 'Артикул: 110')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo16_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo16_2.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo16_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo16_2.jpg", alt="").lazy
+          +block('Дизайнерское пальто LALA SAND', 'LALA SAND', 'Артикул: 140')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo17_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo17_2.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo17_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo17_2.jpg", alt="").lazy
+          +block('Дизайнерское пальто MARYSSA BLUE', 'MARYSSA BLUE', 'Артикул: 116')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo18_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo18_2.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo18_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo18_2.jpg", alt="").lazy
+          +block('Дизайнерское пальто MARYSSA RED', 'MARYSSA RED', 'Артикул: 149')
+      .catalogue-block
+        .catalogue-block__container
+          .catalogue-block__gallery
+            .catalogue-block__slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo19_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo19_2.jpg", alt="").lazy
+            .catalogue-block__nav-slider
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo19_1.jpg", alt="").lazy
+              .catalogue-block__slide
+                .catalogue-block__slide-container
+                  img(data-src="img/catalogue/photo19_2.jpg", alt="").lazy
+          +block('Дизайнерское пальто AUDEN CREAM', 'AUDEN CREAM', 'Артикул: 137')

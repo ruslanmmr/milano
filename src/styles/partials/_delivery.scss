@@ -1,11 +1,13 @@
 .delivery {
   color: #fff;
   background-color: #252525;
-  padding: 90px 0;
   &__title {
     font-size: 52px;
     line-height: 1.23;
     font-weight: bold;
+  }
+  &__container {
+    padding: 90px 0;
   }
   &__list {
     font-size: 29px;
@@ -57,7 +59,9 @@
 }
 @media all and(max-width: 576px) {
   .delivery {
-    padding: 50px 0;
+    &__container {
+      padding: 50px 0;
+    }
     &__title {
       font-size: 24px;
       display: block;

@@ -1,11 +1,12 @@
 $(document).ready(function () {
-  slider();
   lazy();
-  nav();
   timerMain();
+  slider();
+  nav();
   mask();
   popup();
   modalMagnificBasket();
+  landingScroll();
 });
 $(window).resize(function () {
   innerWidth = $('body').innerWidth();
@@ -13,6 +14,7 @@ $(window).resize(function () {
 
 //global variables
 var innerWidth = $('body').innerWidth();
+var mobileLink = $(".mobile-nav__link");
 
 
 //lazy
@@ -34,6 +36,10 @@ function nav() {
   navButton.click(function(event) {
     event.preventDefault();
     nav.toggleClass('mobile-nav_active');
+    stateCheck();
+  })
+  mobileLink.click(function() {
+    nav.removeClass('mobile-nav_active');
     stateCheck();
   })
 
@@ -109,13 +115,10 @@ function mask() {
 }
 //popup
 function popup() {
-  $('.popup').magnificPopup(
-  );
 }
 function modalMagnificBasket() {
 	$('.popup_link').magnificPopup({
 		closeBtnInside: false,
-		midClick: true,
     fixedContentPos: true,
     removalDelay: 300,
     mainClass: 'mfp-fade',
@@ -131,7 +134,52 @@ function modalMagnificBasket() {
     closeBtnInside: false,
     showCloseBtn: true
   });
-  $('.popup-close').on('click', function() {
-    $.magnificPopup.close();
+}
+//якорные ссылки
+function landingScroll() {
+  var headerHeight = $(".header").height();
+  var body = $("body");
+  var scrollLink = $('.scroll-link')
+  var desctopLink = $(".nav__link");
+
+  function scroll() {
+    if(body.hasClass("in-scroll")) {} else {
+      scrollLink.each(function () {
+        var window_top = $(window).scrollTop();
+        var div_1 = $(this).attr('href');
+        if($(div_1).length > 0) {
+          var div_top = $(div_1).offset().top;
+          var blockHeight = $(div_1).height();
+          if (window_top > (div_top - headerHeight) && window_top < (div_top - headerHeight) + blockHeight){
+            $('.nav__item').find('a').removeClass('scroll-link_active');
+            $('.nav__item').find('a[href="'+div_1+'"]').addClass('scroll-link_active');
+          } else {
+            $('.nav__item').find('a[href="'+div_1+'"]').removeClass('scroll-link_active');
+          };
+        }
+      });
+    }
+  }
+  $(window).scroll(function(){
+    scroll();
   });
+  scrollLink.click(function (event) {
+    var id  = $(this).attr('href'),
+        top = $(id).offset().top - headerHeight + 1;
+    event.preventDefault();
+    scrollLink.removeClass('nav__link_active');
+    $(this).addClass('nav__link_active');
+
+    if (mobileLink.is(event.target)) {
+      setTimeout(function() {
+        $('body,html').animate({scrollTop: top}, 400);
+      }, 300)
+    } else if (desctopLink.is(event.target)) {
+      $('body,html').animate({scrollTop: top}, 400);
+      body.addClass("in-scroll");
+      setTimeout(function() {
+        body.removeClass("in-scroll");
+      }, 400)
+    }
+  })
 }
