@@ -83,7 +83,7 @@
     margin: 0;
   }
   &:nth-child(2) {
-    img {
+    .description-block__image {
       margin: 0 0 0 30px;
     }
     text-align: right;
@@ -106,8 +106,8 @@
     font-size: 20px;
   }
   .description-block {
-    img {
-      margin: 0 auto 20px auto !important;
+    &__image {
+      margin: 0 auto 15px auto !important;
     }
     p {
       text-align: center;
