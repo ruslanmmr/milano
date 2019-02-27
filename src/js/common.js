@@ -78,32 +78,46 @@ function timerMain() {
 }
 //gallery-slider
 function slider() {
-  var sliderNum = 0,
-      navsliderNum = 0;
+
   $('.catalogue-block__slider').each( function() {
-    sliderNum++;
-    $(this).addClass( 'slider-' + sliderNum ).slick({
+    $(this).slick({
       arrows: true,
-      asNavFor: '.nav-slider-' + sliderNum,
       slidesToScroll: 1,
       slidesToShow: 1,
-      lazyLoad: 'progressive'
+      lazyLoad: 'ondemand',
+      dots: true
     });
   });
-  $('.catalogue-block__nav-slider').each( function() {
-    navsliderNum++;
-    $(this).addClass( 'nav-slider-' + navsliderNum ).slick({
-      arrows: false,
-      asNavFor: '.slider-' + navsliderNum,
-      slidesToScroll: 1,
-      infinite: true,
-      slidesToShow: 5,
-      focusOnSelect: true,
-      lazyLoad: 'progressive'
-    });
+  pag();
+
+  $('.catalogue-block__slider').on('swipe', function(){
+    pag();
   });
+
+  $('.catalogue-block__nav-slider .catalogue-block__slide').children().click(function() {
+    var index = $(this).parent().index();
+    $(this).parents('.catalogue-block').find('.catalogue-block__slider').slick('slickGoTo', index);
+    pag();
+  });
+
+  //custom pagination
+  function pag() {
+    $(".slick-dots li").each(function() {
+      if($(this).hasClass("slick-active")) {
+        $(this).parents('.catalogue-block').find('.catalogue-block__nav-slider .catalogue-block__slide').removeClass("catalogue-block__slide_active");
+        $(this).parents('.catalogue-block').find('.catalogue-block__nav-slider .catalogue-block__slide').eq($(this).index()).addClass("catalogue-block__slide_active");
+      }
+    });
+  }
+
+  $(".catalogue-block .slick-arrow").on('click', function(){
+    setTimeout(function(){
+      pag();
+    }, 100);
+  });
+
   //догрузка изображений при перелистывании
-  $('.catalogue-block__slider, .catalogue-block__nav-slider').on('afterChange', function(){
+  $('.catalogue-block__slider').on('afterChange', function(){
     lazy();
   });
 }
